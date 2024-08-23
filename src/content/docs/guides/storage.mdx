@@ -1,0 +1,12 @@
+---
+title: Storage
+description: Storage and volume mounts allow your applications to save and access data that needs to persist beyond the life of a single Pod
+---
+Storage in Kubernetes is like a storage room or a disk where your application can save files, logs, databases, or any data it needs to keep. This storage is independent of the containers, meaning even if the container stops or restarts, the data remains safe in the storage. For example, imagine you have a web application that saves user-uploaded photos. These photos need to be stored somewhere so that even if the web server restarts, the photos aren't lost.
+
+A volume mount is like a doorway that connects your storage room (the storage) to your container. When you mount a volume, you're telling Kubernetes to make a specific part of your storage accessible inside your container at a certain location (a folder or directory). For your web application, you might mount a volume at /uploads, so when a user uploads a photo, it gets saved in this /uploads directory. Even if the web server restarts, the photos are still there because they’re stored in the mounted volume.
+
+![Configure Container Storage](../../../assets/storage-config.png)
+
+
+

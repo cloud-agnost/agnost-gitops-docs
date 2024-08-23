@@ -1,0 +1,45 @@
+---
+title: Cloud-agnostic instant deployments
+description: Open-source self-hosted alternative to Vercel, Netlify, Raiway.app, Render or Heroku running on Kubernetes clusters.
+template: splash
+hero:
+  tagline: An open-source, self-hosted alternative to Vercel, Netlify, Railway.app, Render, or Heroku, running on Kubernetes clusters.
+  image:
+    file: ../../assets/hero.png
+  actions:
+    - text: Get started
+      link: /getting-started
+      icon: right-arrow
+    - text: View on Github
+      link: https://github.com/cloud-agnost/agnost-gitops
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Why Agnost
+
+<CardGrid>
+	<Card title="Streamline Application Deployment" icon="rocket">
+		Simplifies the process of building, deploying and managing applications in the cloud.
+	</Card>
+	<Card title="Accelerate Infrastructure Setup" icon="seti:db">
+		Allowing developers to focus on building software rather than managing infrastructure.
+	</Card>
+	<Card title="Bypass Vendor Lock-in" icon="approve-check">
+		Providing an easy to set-up platform across different cloud environments.
+	</Card>
+	<Card title="Easily integration with Git providers" icon="seti:git">
+		Seamless integration of your repos from GitHub, GitLab and Bitbucket to build & deploy pipelines.
+	</Card>
+</CardGrid>
+
+## Effortlessly Self-host Agnost Using its Helm Chart
+
+```console
+helm repo add agnost-gitops https://cloud-agnost.github.io/agnost-gitops-charts/
+helm upgrade --install agnost agnost-gitops/base --namespace agnost --create-namespace
+```
+
+View Agnost [documentation](./getting-started) for detailed set-up and configuration instructions and platform guides.
