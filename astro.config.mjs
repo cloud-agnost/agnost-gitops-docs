@@ -66,6 +66,10 @@ export default defineConfig({
 						{ label: "Team Management", slug: "guides/team" },
 					],
 				},
+				{
+					label: "Community & Support",
+					slug: "community-support",
+				},
 			],
 		}),
 	],
