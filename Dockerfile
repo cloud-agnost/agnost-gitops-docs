@@ -25,8 +25,8 @@ FROM nginx:alpine
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
-# Expose port 4000
-EXPOSE 4000
+# Expose port 80
+EXPOSE 80
 
 # Start Nginx and keep it running
 CMD ["nginx", "-g", "daemon off;"]
