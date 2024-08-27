@@ -6,19 +6,19 @@ description: Detailed guide to install Agnost to a Kubernetes cluster.
 
 Agnost has its own [Helm chart](https://github.com/cloud-agnost/agnost-gitops-charts) to install it on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager. This chart installs the following components together with Agnost software:
 
-- **MongoDB** to store Agnost configuration, your container definitions and git repository settings
+- **MongoDB** to store Agnost configuration, your container definitions, and git repository settings
 - **Redis** to use as a cache to speed up data retrieval and authentication
-- **MinIO** to store data on S3 compatible buckets
+- **MinIO** to store data on S3-compatible buckets
 - **Registry** to store container images and other data in an OCI Registry
 - **Tekton Pipelines** as CD pipeline to build, push, and deploy your applications.
-- **NGINX Ingress Controller** to use as Ingress controller. You can skip installing this if you already have `ingress-nginx` running in the cluster. However, you need to specify the existing ingress controller installation namespace in helm values.yaml file. See [NGINX Ingress Controller troubleshooting](#ingress-nginx) section for more details.
-- **Cert Manager** to generate TLS certificates for your domain. You can skip installing this if you already have `cert-manager` running in the cluster. However, you need to overwrite several default values in values.yaml file. See [Cert Manager troubleshooting](#cert-manager) section for more details.
+- **NGINX Ingress Controller** to use as Ingress Controller. You can skip installing this if you already have `ingress-nginx` running in the cluster. However, you need to specify the existing ingress controller installation namespace in helm values.yaml file. See [NGINX Ingress Controller troubleshooting](#ingress-nginx) section for more details.
+- **Cert Manager** to generate TLS certificates for your domain. You can skip installing this if you already have a `cert-manager` running in the cluster. However, you need to overwrite several default values in values.yaml file. See [Cert Manager troubleshooting](#cert-manager) section for more details.
 
 ## Requirements
 
 To install and run Agnost on your Kubernetes cluster, you need and up an running Kubernetes cluster. We highly recommend at least 4CPUs and 8GB of memory for the cluster. As you add more containers and connect your repositories, you may need more resources to build, deploy and run your applications.
 
-Please make sure that you have also installed [Helm](https://helm.sh/docs/intro/install/) and [kubectl](https://kubernetes.io/docs/tasks/tools/) command line tool if not already.
+Please make sure that you have also installed [Helm](https://helm.sh/docs/intro/install/) and [kubectl](https://kubernetes.io/docs/tasks/tools/) command line tools if not already.
 
 ## Get Agnost Chart
 The first step is to add the Agnost Helm repository to your local Helm client. You can do this by running the following command:
@@ -48,7 +48,7 @@ _See [configuration](#configuration) below._
 _See [helm install](https://helm.sh/docs/helm/helm_install/) for command documentation._
 
 ## Check Installation Satus
-You can check the status of the installtion by running the following command. If all the pods are running, you can proceed to setting up the Agnost. It may take 5-10 minutes for all the pods to be up and running.
+You can check the status of the installation by running the following command. If all the pods are running, you can proceed to setting up the Agnost. It may take 5-10 minutes for all the pods to be up and running.
 
 ```console
 kubectl get pods -n agnost
@@ -56,7 +56,7 @@ kubectl get pods -n agnost
 
 Please note that if you have installed agnost to a different namespace, you need to replace `agnost` with your namespace.
 
-Following installation, you need to complete your setup by creating your user account through Agnost Studio. To launch Agnost Studio, type the URL or IP address of your cluster on your browser e.g., `http(s)://[your cluster URL or IP]/studio`. If you have installed Agnost locally you can access Agnost Studio at http://localhost/studio
+Following installation, you need to complete your setup by creating your user account through Agnost Studio. To launch Agnost Studio, type the URL or IP address of your cluster on your browser e.g., `http(s)://[your cluster URL or IP]/studio`. If you have installed Agnost locally, you can access Agnost Studio at http://localhost/studio
 
 Please note that besides the owner of the Agnost cluster, other users cannot create their own accounts. The owner of the Agnost cluster needs to specifically create invitation links for other users to join the cluster through Agnost Studio.
 

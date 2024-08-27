@@ -3,16 +3,15 @@ title: Key Concepts
 description: Information about key-concepts used in Agnost studio that you need to get familiar with.
 ---
 
-There a a few key concepts that you need to get familiar with when using Agnost Studio which is the management console where you create, manage and monitor your containers.
+Understanding the key concepts in Agnost Studio is crucial for effective container management. Agnost Studio is the management console where you create, manage, and monitor your containers.
 
-- **Cluster:** The cluster is the top level entity representing the Agnost deployment in your Kubernetes cluster.
-- **Organization:** In Agnost, you start creating your projects under organizations. Organization is the logical grouping of your projects. You can think of organizations like a company, client or a functional unit.
-- **Project:** Project is the fundamental entity in an Agnost cluster. Each project can have its team, meaning you can assign different roles to team members and collaboratively work on a project as a team. Each project can also have one or more environments where you deploy your applications (e.g., containers).
-- **Environment:** You can think of environment as branches in a git repository. A project can have many environments: production, staging, development, test, etc. Please note that each environment has its own Kubernetes namespace, which ensures the isolation of different container and services. You deploy your applications in project environments.
-- **Container:** As its name implies these are the resources that you create in your project environments. A container can be a Kubernetes [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/), [stateful set](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) or [cron job](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/). As an example in your development environment you can create three containers, a deployment backend of your app, another deployment for the frontend and a stateful set database.
-
+- **Cluster:** The cluster is the top-level entity representing the Agnost deployment in your Kubernetes cluster.
+- **Organization:** In Agnost, you start creating your projects under organizations. The organization is the logical grouping of your projects. You can think of organizations like a company, client, or functional unit.
+- **Project:** The project is the fundamental entity in an Agnost cluster. Each project can have its team, meaning you can assign different roles to team members and collaboratively work on a project as a team. Each project can also have one or more environments where you deploy your applications (e.g., containers).
+- **Environment:** You can think of the environment as branches in a git repository. A project can have many environments: production, staging, development, test, etc. Please note that each environment has its own Kubernetes namespace, which ensures the isolation of different containers and services. You deploy your applications in project environments.
+- **Container:** As its name implies, these are the resources you create in your project environments. A container can be a Kubernetes [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/), [stateful set](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/), or [cron job](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/). For example, in your development environment, you can create three containers, a deployment backend of your app, another for the frontend, and a stateful set database.
 :::note
-Please do not confuse container termiology used in Agnost with containers in Kubernetes pods. In Agnost, containers define a higher level entitiy, a resource, that covers deployments, stateful sets and cron jobs.
+Please do not confuse the container terminology used in Agnost with that used in Kubernetes pods. In Agnost, containers define a higher-level entity, a resource, that covers deployments, stateful sets, and cron jobs.
 :::
 
 
