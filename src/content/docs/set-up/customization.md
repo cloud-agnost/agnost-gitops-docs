@@ -45,6 +45,8 @@ Following the creation of the cluster owner account, you need to set your cluste
 
 :::note
 Agnost automatically issues the certificates for your cluster domain. One certificate is for the domain itself, and the other is for the first-level wildcard subdomains. The subdomain wildcard certificate is issued so that when you create your containers and prefer to expose them to the outside world, these containers can be accessed by the automatically generated ingress at `https://[your-container-id]-[environment-id].[your-domain]`
+
+Please note that, given that you have made the necessary DNS configurations, issuing your cluster's TLS certificate can take couple of minutes.
 :::
 
 ## Set Reverse Proxy URL (optional)
