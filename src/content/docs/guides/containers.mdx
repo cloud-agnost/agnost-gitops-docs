@@ -5,6 +5,10 @@ description: You can create several different resource workloads in Agnost
 A container can be a Kubernetes [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/), [stateful set](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/), or [cron job](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/). You create your containers in project environments, and an environment can host multiple containers. Agnost also provides a list of templates to use when creating your containers.
 
 :::note
+Please do not confuse the container terminology used in Agnost with that used in Kubernetes pods. In Agnost, containers define a higher-level entity, a resource, that covers deployments, stateful sets, and cron jobs.
+:::
+
+:::note
 When you create a database, key-value store, or object storage using an Agnost template, you can retrieve the username and password credentials to access these resources from the [environment variables](/guides/variables) tab of the container.
 :::
 
